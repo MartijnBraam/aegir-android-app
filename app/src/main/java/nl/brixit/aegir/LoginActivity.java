@@ -3,6 +3,7 @@ package nl.brixit.aegir;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 
@@ -156,11 +157,10 @@ public class LoginActivity extends AppCompatActivity {
                     public void onSuccess(int statusCode, Header[] headers, JSONObject obj) {
                         showProgress(false);
                         try {
-                            String sess = obj.getString("login");
-                            int ID = obj.getInt("id");
                             Toast.makeText(getApplicationContext(), "Login succeeded :)", Toast.LENGTH_LONG).show();
-                            //user.setUserId(obj.getInt("userid"));
-                        } catch (JSONException e) {
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
+                        } catch (Exception e) {
                             Toast.makeText(getApplicationContext(), "Error Occured [Server's JSON response might be invalid]!", Toast.LENGTH_LONG).show();
                             e.printStackTrace();
                         }
@@ -191,7 +191,8 @@ public class LoginActivity extends AppCompatActivity {
                             mPasswordView.setError("Invalid credentials");
                         } else {
                             Toast.makeText(getApplicationContext(), throwable.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-                        }                    }
+                        }
+                    }
                 });
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();

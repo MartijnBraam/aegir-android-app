@@ -41,7 +41,7 @@
                     android:hint="@string/prompt_hostname"
                     android:imeActionId="@+id/login"
                     android:imeActionLabel="@string/action_sign_in_short"
-                    android:inputType="text"
+                    android:inputType="textUri"
                     android:maxLines="1"
                     android:singleLine="true" />
 

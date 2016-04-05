@@ -12,4 +12,8 @@
     <string name="prompt_username">Username</string>
     <string name="prompt_hostname">Aegir hostname</string>
     <string name="error_no_api_here">The entered host doesn\'t seem to run an Aegir api</string>
+    <string name="title_activity_main">Overview</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_hostmaster">Hostmaster</string>
 </resources>
